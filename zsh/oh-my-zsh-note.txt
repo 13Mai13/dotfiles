@@ -1,0 +1,2 @@
+# oh-my-zsh should be installed fresh on each machine
+# Installation command: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

@@ -1,0 +1,68 @@
+# Sensitive files
+ssh/id_*
+ssh/known_hosts*
+ssh/authorized_keys*
+
+# History files
+.zsh_history
+.bash_history
+.python_history
+.lesshst
+.viminfo
+
+# Compiled zsh files
+.zcompdump*
+*.zwc
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.CFUserTextEncoding
+ehthumbs.db
+Thumbs.db
+
+# Directories that should be installed fresh
+.oh-my-zsh/
+.pyenv/versions/
+.rustup/toolchains/
+.cargo/bin/
+.cargo/registry/
+.fzf/
+node_modules/
+
+# IDE and editor
+.vscode/workspaceStorage/
+.vscode/logs/
+.idea/
+.vim/sessions/
+.vim/.netrwhist
+
+# Development caches
+.cache/
+.npm/
+.cargo/registry/
+.cargo/git/
+
+# Local environment files
+.env
+.env.local
+
+# Logs
+*.log
+
+# Backup files
+*.bak
+*~
+
+# Docker
+.docker/config.json
+
+# Application data that shouldn't be synced
+.cups/
+.Trash/
+.jupyter/runtime/
+.local/share/
+Library/

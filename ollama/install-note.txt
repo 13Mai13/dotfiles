@@ -1,0 +1,3 @@
+# Ollama AI models directory found
+# Install with: brew install ollama
+# Your models will need to be re-downloaded
