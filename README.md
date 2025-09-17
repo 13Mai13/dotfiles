@@ -1,9 +1,9 @@
 # dotfiles
 A repo with my mac config
 
-## unified branch
+### Done
 
-Everything under this branch will be unified by both mac's
+- Brewfile -- No apps in there
 
 ### TODO
 
@@ -13,6 +13,6 @@ Everything under this branch will be unified by both mac's
 - Aerospace
 - Nvim
 - Zsh
-- Brew
+- Python -- So far a weird installation with pyenv + uv: Change to fully uv managed
 
 - Automatic sync
