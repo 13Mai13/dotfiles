@@ -1,0 +1,11 @@
+# Work (Zapier via GitLab)
+# This is Git's per-user configuration file.(https://engineering.zapier.com/guides/git/configure-commit-signing/)
+# The contents of this file are included only for GitLab.com URLs
+[includeIf "hasconfig:remote.*.url:git@gitlab.com:zapier/**"]
+  path = ~/.gitconfig-zapier-gitlab
+[includeIf "hasconfig:remote.*.url:https://gitlab.com/zapier/**"]
+  path = ~/.gitconfig-zapier-gitlab
+
+# Personal GitHub config only for repos inside ~/.mai_code/
+[includeIf "gitdir:~/.mai_code/"]
+  path = ~/.gitconfig-github
