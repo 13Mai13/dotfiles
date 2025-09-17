@@ -1,0 +1,13 @@
+brew "aws-vault"
+brew "awscli"
+brew "fzf"
+brew "tree-sitter"
+brew "neovim"
+brew "node"
+brew "pyenv"
+brew "starship"
+brew "tmux"
+brew "tree"
+brew "zsh"
+
+cask "font-jetbrains-mono-nerd-font"
