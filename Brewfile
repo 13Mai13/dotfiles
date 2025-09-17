@@ -1,11 +1,13 @@
-# --- CLI  ---
-brew "git"
-brew "zsh"
+brew "aws-vault"
+brew "awscli"
 brew "fzf"
+brew "tree-sitter"
+brew "neovim"
+brew "node"
+brew "pyenv"
 brew "starship"
+brew "tmux"
+brew "tree"
+brew "zsh"
 
-# --- Window Manager ---
-brew "aerospace"
-
-# --- Dotfiles Config Management ---
-brew "stew"
+cask "font-jetbrains-mono-nerd-font"
