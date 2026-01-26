@@ -10,6 +10,7 @@ brew "pyenv"
 brew "starship"
 brew "tmux"
 brew "tree"
+brew "uv"  # Modern Python package manager
 brew "zsh"
 
 # Window manager
