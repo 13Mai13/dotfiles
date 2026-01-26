@@ -18,4 +18,8 @@ cask "nikitabobko/tap/aerospace"
 # Terminal
 cask "ghostty"
 
+# Productivity apps
+cask "notion"
+cask "obsidian"
+
 cask "font-jetbrains-mono-nerd-font"
