@@ -12,4 +12,7 @@ brew "tmux"
 brew "tree"
 brew "zsh"
 
+# Window manager
+cask "nikitabobko/tap/aerospace"
+
 cask "font-jetbrains-mono-nerd-font"
