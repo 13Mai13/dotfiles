@@ -15,4 +15,7 @@ brew "zsh"
 # Window manager
 cask "nikitabobko/tap/aerospace"
 
+# Terminal
+cask "ghostty"
+
 cask "font-jetbrains-mono-nerd-font"
