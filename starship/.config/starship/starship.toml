@@ -1,0 +1,95 @@
+# Starship Configuration
+# Catppuccin Mocha theme
+
+format = """
+[](#cba6f7)\
+$os\
+$username\
+[](bg:#89b4fa fg:#cba6f7)\
+$directory\
+[](fg:#89b4fa bg:#74c7ec)\
+$git_branch\
+$git_status\
+[](fg:#74c7ec bg:#a6e3a1)\
+$python\
+$nodejs\
+$rust\
+[](fg:#a6e3a1 bg:#f9e2af)\
+$docker_context\
+[](fg:#f9e2af bg:#fab387)\
+$time\
+[ ](fg:#fab387)\
+"""
+
+[os]
+disabled = false
+style = "bg:#cba6f7 fg:#1e1e2e"
+
+[os.symbols]
+Macos = "  "
+
+[username]
+show_always = true
+style_user = "bg:#cba6f7 fg:#1e1e2e"
+style_root = "bg:#cba6f7 fg:#f38ba8"
+format = '[$user ]($style)'
+disabled = false
+
+[directory]
+style = "bg:#89b4fa fg:#1e1e2e"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"~/.mai_code" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:#74c7ec fg:#1e1e2e"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:#74c7ec fg:#1e1e2e"
+format = '[$all_status$ahead_behind ]($style)'
+conflicted = "  "
+ahead = " ⇡${count} "
+behind = " ⇣${count} "
+diverged = " ⇕⇡${ahead_count}⇣${behind_count} "
+up_to_date = ""
+untracked = " ${count} "
+stashed = " "
+modified = " ${count} "
+staged = " [++\($count\)](green)"
+renamed = " 襁 "
+deleted = " ${count} "
+
+[python]
+symbol = " "
+style = "bg:#a6e3a1 fg:#1e1e2e"
+format = '[ $symbol ($version) ]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#a6e3a1 fg:#1e1e2e"
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#a6e3a1 fg:#1e1e2e"
+format = '[ $symbol ($version) ]($style)'
+
+[docker_context]
+symbol = " "
+style = "bg:#f9e2af fg:#1e1e2e"
+format = '[ $symbol $context ]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#fab387 fg:#1e1e2e"
+format = '[ ♥ $time ]($style)'
