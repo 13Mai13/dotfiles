@@ -26,6 +26,11 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # Starship prompt
 eval "$(starship init zsh)"
 
+# ngrok shell completions
+if command -v ngrok &>/dev/null; then
+  eval "$(ngrok completion)"
+fi
+
 # Aliases
 alias ll='ls -lah'
 alias vim='nvim'

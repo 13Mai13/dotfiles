@@ -8,6 +8,9 @@ brew "htop"         # Interactive process viewer
 brew "tree"         # Display directory structure as a tree
 brew "tree-sitter"  # Parser generator tool and incremental parsing library
 
+# Networking & Tunneling
+cask "ngrok"  # Secure tunneling to localhost
+
 # Container & Virtualization
 brew "colima"          # Container runtime on macOS (Docker alternative)
 brew "docker"          # Container platform
