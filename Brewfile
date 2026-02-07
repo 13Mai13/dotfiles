@@ -22,6 +22,13 @@ brew "node"     # JavaScript runtime
 brew "pyenv"    # Python version management
 brew "uv"       # Modern, fast Python package manager (replaces pip/poetry)
 
+# Python Development Tools
+brew "ruff"           # Fast Python linter and formatter
+brew "black"          # Python code formatter
+brew "mypy"           # Static type checker for Python
+brew "flake8"         # Python linting tool
+brew "pyright"        # Microsoft's static type checker for Python (language server)
+
 # Shell & Terminal
 brew "starship"  # Cross-shell prompt customization
 brew "tmux"      # Terminal multiplexer for managing multiple sessions
@@ -35,6 +42,9 @@ cask "nikitabobko/tap/aerospace"  # Tiling window manager for macOS
 
 # Terminal Emulator
 cask "ghostty"  # Fast, native terminal emulator
+
+# Text Editors & IDEs
+cask "sublime-text"  # Sophisticated text editor for code, markup and prose
 
 # Productivity Apps
 cask "notion"    # All-in-one workspace for notes and collaboration
