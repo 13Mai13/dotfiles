@@ -1,0 +1,91 @@
+{
+	// Python specific settings
+	"tab_size": 4,
+	"translate_tabs_to_spaces": true,
+	"use_tab_stops": true,
+
+	// PEP 8 compliance
+	"rulers": [88, 120],  // Black uses 88, PEP 8 suggests 79-120
+	"word_wrap": true,
+	"wrap_width": 88,
+
+	// Auto-formatting
+	"format_on_save": true,
+
+	// Trailing whitespace
+	"trim_trailing_white_space_on_save": true,
+	"ensure_newline_at_eof_on_save": true,
+
+	// Auto-complete
+	"auto_complete": true,
+	"auto_complete_triggers": [
+		{"selector": "source.python", "characters": "."},
+		{"selector": "source.python", "characters": " "},
+		{"selector": "source.python - string - comment", "characters": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_"}
+	],
+
+	// Python syntax
+	"detect_indentation": false,  // Always use 4 spaces for Python
+	"auto_indent": true,
+	"smart_indent": true,
+	"indent_to_bracket": false,
+
+	// Comments
+	"auto_match_enabled": true,
+
+	// Draw tabs and spaces
+	"draw_white_space": ["selection", "leading_mixed"],
+
+	// Anaconda settings (if using Anaconda plugin)
+	"anaconda_linting": false,  // Disable in favor of LSP
+	"anaconda_linting_behaviour": "save-only",
+	"pep8": true,
+	"pep8_ignore": [
+		"E501"  // Line too long (handled by Black)
+	],
+
+	// Python Black formatter
+	"black_command": "black",
+	"black_line_length": 88,
+	"black_fast": false,
+	"black_skip_string_normalization": false,
+	"black_use_blackd": false,
+
+	// SublimeLinter settings
+	"SublimeLinter.linters.flake8.args": [
+		"--max-line-length=88",
+		"--extend-ignore=E203,W503"  // E203: whitespace before ':', W503: line break before binary operator (Black compat)
+	],
+	"SublimeLinter.linters.mypy.args": [
+		"--ignore-missing-imports",
+		"--follow-imports=silent",
+		"--show-column-numbers"
+	],
+
+	// Build system
+	"build_env": {},
+
+	// Hide these patterns in Python projects
+	"folder_exclude_patterns": [
+		"__pycache__",
+		"*.egg-info",
+		".pytest_cache",
+		".mypy_cache",
+		".ruff_cache",
+		".tox",
+		".venv",
+		"venv",
+		"env",
+		".coverage",
+		"htmlcov",
+		"dist",
+		"build"
+	],
+	"file_exclude_patterns": [
+		"*.pyc",
+		"*.pyo",
+		"*.pyd",
+		".coverage",
+		".DS_Store"
+	]
+}

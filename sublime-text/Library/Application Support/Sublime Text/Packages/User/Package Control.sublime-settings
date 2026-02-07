@@ -1,0 +1,55 @@
+{
+	"bootstrapped": true,
+	"in_process_packages": [],
+	"installed_packages": [
+		// Theme - Catppuccin
+		"Catppuccin",
+
+		// LSP - Language Server Protocol
+		"LSP",
+		"LSP-pyright",  // Microsoft's Python language server (type checking, autocomplete)
+		"LSP-ruff",     // Ruff linter/formatter integration
+
+		// Python support
+		"Anaconda",          // Python IDE features (optional, can be disabled if LSP is preferred)
+		"Python 3",          // Python 3 syntax definitions
+		"MagicPython",       // Enhanced Python syntax highlighting
+		"Python Flake8 Lint", // Flake8 linting
+		"SublimeLinter",     // Linting framework
+		"SublimeLinter-flake8",  // Flake8 linter
+		"SublimeLinter-mypy",    // mypy type checker
+
+		// Auto-formatting
+		"Python Black",      // Black formatter integration
+
+		// Code completion and snippets
+		"SublimeCodeIntel",  // Code intelligence
+		"Jedi - Python autocompletion",  // Jedi-based autocompletion
+
+		// Git integration
+		"GitGutter",         // Shows git diff in gutter
+		"SublimeMerge",      // Git client integration
+
+		// General utilities
+		"Package Control",   // Package manager
+		"A File Icon",       // Better file icons
+		"SideBarEnhancements", // Enhanced sidebar
+		"BracketHighlighter", // Bracket matching
+		"Trailing Spaces",   // Highlight trailing spaces
+		"DocBlockr",         // Easy documentation blocks
+		"All Autocomplete",  // Autocomplete from all open files
+		"AutoFileName",      // Autocomplete file names
+		"EditorConfig",      // EditorConfig support
+
+		// Project management
+		"ProjectManager",    // Better project management
+
+		// Markdown support (useful for documentation)
+		"MarkdownPreview",
+		"MarkdownLivePreview",
+
+		// JSON/YAML support
+		"Pretty JSON",
+		"YAML Nav"
+	]
+}
