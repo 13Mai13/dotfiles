@@ -72,7 +72,7 @@ for file in ~/.zshrc ~/.tmux.conf; do
 done
 
 # Backup existing config directories
-for dir in ~/.config/starship ~/.config/ghostty ~/.config/aerospace; do
+for dir in ~/.config/starship ~/.config/ghostty ~/.config/aerospace ~/Library/Application\ Support/Sublime\ Text; do
     if [ -d "$dir" ]; then
         cp -r "$dir" "$BACKUP_DIR/"
         print_success "Backed up $(basename $dir)"
@@ -85,7 +85,7 @@ DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$DOTFILES_DIR"
 
 # Stow each package
-for package in zsh tmux starship ghostty aerospace; do
+for package in zsh tmux starship ghostty aerospace sublime-text; do
     if [ -d "$package" ]; then
         stow -t "$HOME" "$package" 2>&1 | grep -v "BUG in find_stowed_path" || true
         print_success "Stowed $package"

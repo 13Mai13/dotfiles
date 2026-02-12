@@ -1,0 +1,105 @@
+{
+	// Global LSP settings
+	"show_diagnostics_panel_on_save": 0,
+	"show_diagnostics_severity_level": 2,
+	"diagnostics_panel_include_severity_level": 2,
+	"show_code_actions": "annotation",
+	"show_code_lens": "phantom",
+	"show_inlay_hints": true,
+	"log_debug": false,
+	"log_server": false,
+
+	// LSP clients
+	"clients": {
+		// Pyright - Type checking and intelligent code completion
+		"pyright": {
+			"enabled": true,
+			"command": [
+				"pyright-langserver",
+				"--stdio"
+			],
+			"selector": "source.python",
+			"settings": {
+				"python.analysis.autoImportCompletions": true,
+				"python.analysis.autoSearchPaths": true,
+				"python.analysis.diagnosticMode": "workspace",
+				"python.analysis.typeCheckingMode": "basic",  // Options: "off", "basic", "strict"
+				"python.analysis.useLibraryCodeForTypes": true,
+				"python.analysis.diagnosticSeverityOverrides": {
+					"reportUnusedImport": "warning",
+					"reportUnusedVariable": "warning",
+					"reportDuplicateImport": "warning",
+					"reportMissingImports": "error",
+					"reportUndefinedVariable": "error"
+				},
+				"python.analysis.inlayHints.functionReturnTypes": true,
+				"python.analysis.inlayHints.variableTypes": true,
+				"python.analysis.inlayHints.parameterTypes": true
+			}
+		},
+
+		// Ruff - Fast Python linter and formatter
+		"lsp-ruff": {
+			"enabled": true,
+			"command": [
+				"ruff",
+				"server",
+				"--preview"
+			],
+			"selector": "source.python",
+			"settings": {
+				"organizeImports": true,
+				"fixAll": true,
+				"codeAction": {
+					"disableRuleComment": {
+						"enable": true
+					},
+					"fixViolation": {
+						"enable": true
+					}
+				},
+				"lint": {
+					"enable": true,
+					"preview": true,
+					"select": ["ALL"],  // Enable all rules by default
+					"ignore": [
+						"D",      // pydocstyle (too strict for most projects)
+						"ANN",    // flake8-annotations (can be enabled per project)
+						"COM812", // trailing comma (conflicts with formatter)
+						"ISC001"  // implicit string concatenation (conflicts with formatter)
+					]
+				},
+				"format": {
+					"enable": true,
+					"preview": true
+				}
+			}
+		}
+	},
+
+	// Default features
+	"semantic_highlighting": true,
+	"show_diagnostics_annotations": true,
+	"show_symbol_action_links": true,
+
+	// Hover and signature help
+	"show_hover_popup": true,
+	"show_signature_help": true,
+	"show_parameter_hints": true,
+
+	// Auto-complete settings
+	"completion_insert_mode": "insert",
+	"only_show_lsp_completions": false,
+
+	// Code actions
+	"code_action_on_save_timeout_ms": 2000,
+
+	// Diagnostics
+	"diagnostics_delay_ms": 200,
+	"diagnostics_gutter_marker": "sign",
+	"diagnostics_highlight_style": "underline",
+
+	// Document formatting
+	"lsp_format_on_paste": false,
+	"lsp_format_on_save": true
+}
