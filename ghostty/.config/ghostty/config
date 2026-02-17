@@ -1,7 +1,7 @@
 # Ghostty Terminal Configuration
 
 # Theme
-theme = catppuccin-mocha.conf
+theme = Catppuccin Mocha
 
 # Font
 font-family = "JetBrainsMono Nerd Font"
