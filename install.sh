@@ -92,6 +92,27 @@ for package in zsh tmux starship ghostty aerospace sublime-text; do
     fi
 done
 
+# Setup Obsidian configuration
+print_info "Setting up Obsidian configuration..."
+OBSIDIAN_VAULT="$HOME/.mai_code/mai-notes"
+if [ -d "$OBSIDIAN_VAULT" ]; then
+    # Create necessary directories
+    mkdir -p "$OBSIDIAN_VAULT/.obsidian/plugins/obsidian-style-settings"
+
+    # Symlink Obsidian config files
+    ln -sf "$DOTFILES_DIR/obsidian/.obsidian/appearance.json" "$OBSIDIAN_VAULT/.obsidian/appearance.json"
+    ln -sf "$DOTFILES_DIR/obsidian/.obsidian/community-plugins.json" "$OBSIDIAN_VAULT/.obsidian/community-plugins.json"
+    ln -sf "$DOTFILES_DIR/obsidian/.obsidian/core-plugins.json" "$OBSIDIAN_VAULT/.obsidian/core-plugins.json"
+    ln -sf "$DOTFILES_DIR/obsidian/.obsidian/hotkeys.json" "$OBSIDIAN_VAULT/.obsidian/hotkeys.json"
+    ln -sf "$DOTFILES_DIR/obsidian/.obsidian/templates.json" "$OBSIDIAN_VAULT/.obsidian/templates.json"
+    ln -sf "$DOTFILES_DIR/obsidian/.obsidian/plugins/obsidian-style-settings/data.json" "$OBSIDIAN_VAULT/.obsidian/plugins/obsidian-style-settings/data.json"
+
+    print_success "Obsidian configuration linked"
+    print_info "Remember to install plugins and Minimal theme in Obsidian"
+else
+    print_info "Obsidian vault not found at $OBSIDIAN_VAULT - skipping"
+fi
+
 # Setup FZF
 print_info "Setting up FZF..."
 if command -v fzf &> /dev/null; then
@@ -140,7 +161,9 @@ echo "  2. Install Tmux Plugin Manager (optional):"
 echo "     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm"
 echo "  3. Open tmux and press Ctrl+Space + I to install plugins"
 echo "  4. Start Aerospace: open -a AeroSpace"
-echo "  5. Check COMMANDS.md for usage reference"
+echo "  5. Install Obsidian plugins (Style Settings, Icon Folder, Excalidraw, Code Styler)"
+echo "  6. Install Minimal theme in Obsidian"
+echo "  7. Check COMMANDS.md for usage reference"
 echo ""
 print_info "Your old dotfiles are backed up in: $BACKUP_DIR"
 echo ""
