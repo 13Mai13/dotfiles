@@ -15,13 +15,37 @@ My macOS development environment configuration using GNU Stow for symlink manage
 
 ### New Machine Setup
 
-```bash
-# Clone this repository
-git clone https://github.com/13Mai13/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
+#### 1. Xcode Command Line Tools
 
-# Run the installation script
-./install.sh
+Git is not available out of the box on a fresh Mac. Install the CLI tools first:
+
+```bash
+sudo softwareupdate --install "$(softwareupdate --list 2>&1 | grep -o 'Command Line Tools for Xcode [^ ]*-[^ ]*' | head -1)"
+```
+
+#### 2. SSH Key
+
+Generate a key, add it to your SSH agent (with macOS Keychain so the passphrase persists across reboots), and add the public key to GitHub:
+
+```bash
+ssh-keygen -t ed25519 -C "your-email@example.com" -f ~/.ssh/id_ed25519
+```
+```bash
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+```
+
+Then copy the output of `cat ~/.ssh/id_ed25519.pub` to [github.com/settings/keys](https://github.com/settings/keys).
+
+Add GitHub to known hosts so the first clone doesn't prompt:
+
+```bash
+ssh-keyscan github.com >> ~/.ssh/known_hosts
+```
+
+#### 3. Clone and Install
+
+```bash
+mkdir -p ~/.mai_code && git clone git@github.com:13Mai13/dotfiles.git ~/.mai_code/dotfiles && cd ~/.mai_code/dotfiles && ./install.sh
 ```
 
 The script will:
@@ -30,6 +54,20 @@ The script will:
 3. Backup your existing dotfiles
 4. Create symlinks using GNU Stow
 5. Configure FZF and other tools
+
+#### 4. Obsidian Vault and Plugins
+
+The install script symlinks Obsidian config into `~/.mai_code/mai-notes` but skips if the vault doesn't exist. Run this after install to create the vault, install all plugins, and link the Minimal theme:
+
+```bash
+VAULT="$HOME/.mai_code/mai-notes" DOTS="$HOME/.mai_code/dotfiles" && mkdir -p "$VAULT/.obsidian/plugins/obsidian-style-settings" "$VAULT/.obsidian/plugins/obsidian-icon-folder" "$VAULT/.obsidian/plugins/obsidian-excalidraw-plugin" "$VAULT/.obsidian/plugins/code-styler" "$VAULT/.obsidian/themes/Minimal" && ln -sf "$DOTS/obsidian/.obsidian/appearance.json" "$VAULT/.obsidian/appearance.json" && ln -sf "$DOTS/obsidian/.obsidian/community-plugins.json" "$VAULT/.obsidian/community-plugins.json" && ln -sf "$DOTS/obsidian/.obsidian/core-plugins.json" "$VAULT/.obsidian/core-plugins.json" && ln -sf "$DOTS/obsidian/.obsidian/hotkeys.json" "$VAULT/.obsidian/hotkeys.json" && ln -sf "$DOTS/obsidian/.obsidian/templates.json" "$VAULT/.obsidian/templates.json" && ln -sf "$DOTS/obsidian/.obsidian/plugins/obsidian-style-settings/data.json" "$VAULT/.obsidian/plugins/obsidian-style-settings/data.json"
+```
+
+```bash
+VAULT="$HOME/.mai_code/mai-notes" && for plugin in "obsidian-community/obsidian-style-settings:obsidian-style-settings:1.0.9" "FlorianWoelki/obsidian-iconize:obsidian-icon-folder:2.14.7" "zsviczian/obsidian-excalidraw-plugin:obsidian-excalidraw-plugin:2.22.0" "mayurankv/Obsidian-Code-Styler:code-styler:1.1.7"; do repo=$(echo $plugin | cut -d: -f1); id=$(echo $plugin | cut -d: -f2); ver=$(echo $plugin | cut -d: -f3); for f in main.js manifest.json styles.css; do curl -sL "https://github.com/$repo/releases/download/$ver/$f" -o "$VAULT/.obsidian/plugins/$id/$f"; done; done && curl -sL "https://github.com/kepano/obsidian-minimal/releases/download/8.1.7/theme.css" -o "$VAULT/.obsidian/themes/Minimal/theme.css" && curl -sL "https://github.com/kepano/obsidian-minimal/releases/download/8.1.7/manifest.json" -o "$VAULT/.obsidian/themes/Minimal/manifest.json" && echo "Obsidian setup done"
+```
+
+> After opening Obsidian, point it to `~/.mai_code/mai-notes` as the vault, then go to Settings → Community plugins and enable each plugin (required once for security).
 
 ### Manual Installation
 
@@ -42,12 +80,8 @@ If you prefer manual control:
 # Install packages
 brew bundle install
 
-# Stow configurations
-stow zsh
-stow tmux
-stow starship
-stow ghostty
-stow aerospace
+# Stow configurations (run from ~/.mai_code/dotfiles)
+stow zsh tmux starship ghostty aerospace sublime-text
 ```
 
 ## Structure
