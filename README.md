@@ -55,7 +55,15 @@ The script will:
 4. Create symlinks using GNU Stow
 5. Configure FZF and other tools
 
-#### 4. Obsidian Vault and Plugins
+#### 4. Desktop Background
+
+Set the wallpaper to the included background image:
+
+```bash
+osascript -e 'tell application "Finder" to set desktop picture to POSIX file "'$HOME'/.mai_code/dotfiles/docs/background.png"'
+```
+
+#### 5. Obsidian Vault and Plugins
 
 The install script symlinks Obsidian config into `~/.mai_code/mai-notes` but skips if the vault doesn't exist. Run this after install to create the vault, install all plugins, and link the Minimal theme:
 
