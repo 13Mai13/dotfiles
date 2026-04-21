@@ -1,6 +1,7 @@
 {
-  "accentColor": "",
+  "accentColor": "#2383e2",
   "cssTheme": "Minimal",
   "baseFontSize": 16,
-  "theme": "moonstone"
+  "theme": "moonstone",
+  "enabledCssSnippets": ["notion-style"]
 }

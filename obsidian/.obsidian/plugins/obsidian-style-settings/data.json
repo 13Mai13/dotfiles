@@ -1,5 +1,17 @@
 {
   "minimal-style@@preset@@h6,minimal-style@@h1-font,minimal-style@@h2-font,minimal-style@@h3-font,minimal-style@@h4-font,minimal-style@@h5-font,minimal-style@@h6-font,minimal-style@@text-normal@@dark,minimal-style@@heading-color": "notion",
+
+  "minimal-style@@ax2": "#f1f1ef",
+  "minimal-style@@bg1": "#ffffff",
+  "minimal-style@@bg2": "#f7f6f3",
+  "minimal-style@@bg3": "#ebebea",
+  "minimal-style@@ui1": "#37352f",
+  "minimal-style@@ui2": "#787774",
+  "minimal-style@@ui3": "#9b9a97",
+  "minimal-style@@tx1": "#37352f",
+  "minimal-style@@tx2": "#787774",
+  "minimal-style@@tx3": "#9b9a97",
+
   "minimal-style@@ax2@@dark": "#191919",
   "minimal-style@@bg1@@dark": "#202020",
   "minimal-style@@bg2@@dark": "#272727",
@@ -10,6 +22,7 @@
   "minimal-style@@tx1@@dark": "#e3e2e0",
   "minimal-style@@tx2@@dark": "#b1b1b1",
   "minimal-style@@tx3@@dark": "#787774",
+
   "minimal-style@@max-width": "88%",
   "minimal-style@@line-width": "52rem",
   "minimal-style@@font-ui-smaller": "14",

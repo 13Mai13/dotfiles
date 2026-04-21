@@ -1,0 +1,144 @@
+/* Notion-like appearance for Obsidian */
+
+/* ── Fonts ── */
+body {
+  --font-interface: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-text: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-monospace: "Fira Code", "Cascadia Code", "Menlo", monospace;
+}
+
+/* ── Light palette (Notion default) ── */
+.theme-light {
+  --background-primary:          #ffffff;
+  --background-primary-alt:      #f7f6f3;
+  --background-secondary:        #f7f6f3;
+  --background-secondary-alt:    #ebebea;
+  --background-modifier-hover:   rgba(55, 53, 47, 0.06);
+  --background-modifier-active:  rgba(55, 53, 47, 0.08);
+  --background-modifier-border:  #e9e9e7;
+  --background-modifier-form-field: #ffffff;
+  --text-normal:   #37352f;
+  --text-muted:    #787774;
+  --text-faint:    #9b9a97;
+  --text-on-accent: #ffffff;
+  --interactive-accent:       #2383e2;
+  --interactive-accent-hover: #1a6bbf;
+  --color-accent:             #2383e2;
+  --scrollbar-thumb-bg: rgba(55, 53, 47, 0.15);
+  --scrollbar-active-thumb-bg: rgba(55, 53, 47, 0.25);
+}
+
+/* ── Dark palette (Notion dark) ── */
+.theme-dark {
+  --background-primary:          #191919;
+  --background-primary-alt:      #202020;
+  --background-secondary:        #202020;
+  --background-secondary-alt:    #272727;
+  --background-modifier-hover:   rgba(255, 255, 255, 0.06);
+  --background-modifier-active:  rgba(255, 255, 255, 0.08);
+  --background-modifier-border:  #2e2e2e;
+  --background-modifier-form-field: #272727;
+  --text-normal:   #e3e2e0;
+  --text-muted:    #b1b1b1;
+  --text-faint:    #787774;
+  --text-on-accent: #ffffff;
+  --interactive-accent:       #529cca;
+  --interactive-accent-hover: #6badd8;
+  --color-accent:             #529cca;
+  --scrollbar-thumb-bg: rgba(255, 255, 255, 0.12);
+  --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.2);
+}
+
+/* ── Page title ── */
+.inline-title {
+  font-size: 2.5em;
+  font-weight: 700;
+  padding-bottom: 0.2em;
+  border-bottom: none;
+}
+
+/* ── Headings: Notion uses same color as body, no color pop ── */
+.cm-header-1, .cm-header-2, .cm-header-3,
+.cm-header-4, .cm-header-5, .cm-header-6,
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--text-normal);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--background-modifier-border);
+  margin: 1.5em 0;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  border-left: 3px solid var(--background-modifier-border);
+  margin-left: 0;
+  padding: 0.2em 1em;
+  color: var(--text-muted);
+  background: transparent;
+  font-style: normal;
+}
+
+/* ── Inline code ── */
+.theme-light .cm-inline-code, .theme-light code {
+  background: rgba(135, 131, 120, 0.12);
+  color: #eb5757;
+  border-radius: 3px;
+  padding: 0 4px;
+  font-size: 0.88em;
+}
+.theme-dark .cm-inline-code, .theme-dark code {
+  background: rgba(135, 131, 120, 0.18);
+  color: #e17373;
+  border-radius: 3px;
+  padding: 0 4px;
+  font-size: 0.88em;
+}
+
+/* ── Code block ── */
+.theme-light pre {
+  background: #f7f6f3;
+  border: 1px solid #e9e9e7;
+  border-radius: 4px;
+}
+.theme-dark pre {
+  background: #202020;
+  border: 1px solid #2e2e2e;
+  border-radius: 4px;
+}
+
+/* ── Tags ── */
+.tag {
+  border-radius: 3px;
+  padding: 2px 7px;
+  font-size: 0.82em;
+  font-weight: 500;
+}
+
+/* ── Links ── */
+a, .internal-link {
+  color: var(--interactive-accent);
+  text-decoration: none;
+}
+a:hover, .internal-link:hover {
+  text-decoration: underline;
+}
+
+/* ── File explorer: tighter, cleaner ── */
+.nav-file-title, .nav-folder-title {
+  font-size: 0.88em;
+  border-radius: 3px;
+}
+
+/* ── Sidebar header ── */
+.workspace-leaf-content[data-type="file-explorer"] .nav-buttons-container {
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+/* ── Scrollbars: thin Notion-style ── */
+::-webkit-scrollbar        { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb  { background: var(--scrollbar-thumb-bg); border-radius: 3px; }
+::-webkit-scrollbar-track  { background: transparent; }
