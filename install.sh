@@ -98,6 +98,7 @@ OBSIDIAN_VAULT="$HOME/.mai_code/mai-notes"
 if [ -d "$OBSIDIAN_VAULT" ]; then
     # Create necessary directories
     mkdir -p "$OBSIDIAN_VAULT/.obsidian/plugins/obsidian-style-settings"
+    mkdir -p "$OBSIDIAN_VAULT/.obsidian/plugins/obsidian-excalidraw-plugin"
     mkdir -p "$OBSIDIAN_VAULT/.obsidian/snippets"
 
     # Symlink Obsidian config files
@@ -107,6 +108,7 @@ if [ -d "$OBSIDIAN_VAULT" ]; then
     ln -sf "$DOTFILES_DIR/obsidian/.obsidian/hotkeys.json" "$OBSIDIAN_VAULT/.obsidian/hotkeys.json"
     ln -sf "$DOTFILES_DIR/obsidian/.obsidian/templates.json" "$OBSIDIAN_VAULT/.obsidian/templates.json"
     ln -sf "$DOTFILES_DIR/obsidian/.obsidian/plugins/obsidian-style-settings/data.json" "$OBSIDIAN_VAULT/.obsidian/plugins/obsidian-style-settings/data.json"
+    ln -sf "$DOTFILES_DIR/obsidian/.obsidian/plugins/obsidian-excalidraw-plugin/data.json" "$OBSIDIAN_VAULT/.obsidian/plugins/obsidian-excalidraw-plugin/data.json"
     ln -sf "$DOTFILES_DIR/obsidian/.obsidian/snippets/notion-style.css" "$OBSIDIAN_VAULT/.obsidian/snippets/notion-style.css"
 
     print_success "Obsidian configuration linked"
