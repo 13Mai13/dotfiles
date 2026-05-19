@@ -46,6 +46,9 @@ cask "ghostty"  # Fast, native terminal emulator
 # Text Editors & IDEs
 cask "sublime-text"  # Sophisticated text editor for code, markup and prose
 
+# AI Coding Agents
+brew "anomalyco/tap/opencode"  # Open source AI coding agent (TUI)
+
 # Productivity Apps
 cask "notion"    # All-in-one workspace for notes and collaboration
 cask "obsidian"  # Knowledge base and note-taking with markdown

@@ -85,7 +85,7 @@ DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$DOTFILES_DIR"
 
 # Stow each package
-for package in zsh tmux starship ghostty aerospace sublime-text; do
+for package in zsh tmux starship ghostty aerospace sublime-text opencode; do
     if [ -d "$package" ]; then
         stow -t "$HOME" "$package" 2>&1 | grep -v "BUG in find_stowed_path" || true
         print_success "Stowed $package"
