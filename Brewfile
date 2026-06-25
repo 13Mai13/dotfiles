@@ -47,8 +47,9 @@ cask "ghostty"  # Fast, native terminal emulator
 cask "sublime-text"  # Sophisticated text editor for code, markup and prose
 
 # Productivity Apps
-cask "notion"    # All-in-one workspace for notes and collaboration
-cask "obsidian"  # Knowledge base and note-taking with markdown
+cask "meetingbar"  # Menu bar app for upcoming calendar meetings
+cask "notion"      # All-in-one workspace for notes and collaboration
+cask "obsidian"    # Knowledge base and note-taking with markdown
 
 # Fonts
 cask "font-jetbrains-mono-nerd-font"  # Programming font with icons
