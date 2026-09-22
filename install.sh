@@ -129,6 +129,11 @@ if command -v uv &> /dev/null; then
     # Pinned to 3.12: aider pulls in pydub, which imports the audioop module
     # that was removed from the stdlib in Python 3.13.
     uv tool install --python 3.12 aider-chat
+    # aider pins scipy==1.15.3, whose compiled extensions fail to dlopen on
+    # macOS 27 ("__DATA/__thread_bss has a zero-fill section type"). Installed
+    # over the pin rather than with --with, which uv rejects as unsatisfiable.
+    uv pip install --python "$HOME/.local/share/uv/tools/aider-chat/bin/python" \
+        --upgrade "scipy>=1.18"
     print_success "Python tools installed with UV"
 fi
 
