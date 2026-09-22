@@ -48,6 +48,7 @@ cask "sublime-text"  # Sophisticated text editor for code, markup and prose
 
 # AI Coding Agents
 brew "anomalyco/tap/opencode"  # Open source AI coding agent (TUI)
+brew "llama.cpp"               # Local model server, for coding with no network
 
 # Productivity Apps
 cask "notion"    # All-in-one workspace for notes and collaboration

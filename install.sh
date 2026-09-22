@@ -85,7 +85,7 @@ DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$DOTFILES_DIR"
 
 # Stow each package
-for package in zsh tmux starship ghostty aerospace sublime-text opencode; do
+for package in zsh tmux starship ghostty aerospace sublime-text opencode local-llm; do
     if [ -d "$package" ]; then
         stow -t "$HOME" "$package" 2>&1 | grep -v "BUG in find_stowed_path" || true
         print_success "Stowed $package"
@@ -126,6 +126,9 @@ if command -v uv &> /dev/null; then
     # Install commonly used Python tools
     uv tool install ruff
     uv tool install black
+    # Pinned to 3.12: aider pulls in pydub, which imports the audioop module
+    # that was removed from the stdlib in Python 3.13.
+    uv tool install --python 3.12 aider-chat
     print_success "Python tools installed with UV"
 fi
 
