@@ -1,0 +1,9 @@
+# Local-only setup: talks to llama-server on localhost, never to a cloud API.
+model: openai/qwen3-coder
+openai-api-base: http://127.0.0.1:8080/v1
+openai-api-key: local
+# The local model has no usage-based billing to report, and analytics/version
+# checks would try to reach the network while offline.
+show-model-warnings: false
+analytics-disable: true
+check-update: false

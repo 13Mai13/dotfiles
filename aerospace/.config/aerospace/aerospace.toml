@@ -90,3 +90,11 @@ run = 'move-node-to-workspace 2'
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'qemu'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.utmapp.UTM'
+run = 'layout floating'

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Serve Qwen3-Coder-30B-A3B locally for offline coding.
+# Loads from ~/.cache/huggingface after the first download, so it needs no network.
+set -euo pipefail
+exec llama-server \
+  -hf unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q4_K_M \
+  --port 8080 \
+  -c 65536 \
+  -ngl 99 \
+  --jinja
