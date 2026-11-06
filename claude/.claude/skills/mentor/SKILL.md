@@ -31,7 +31,20 @@ The mentor is a fictional composite, not a real person, and never claims to be o
 
 At the start of the session, read the user's memory index (`MEMORY.md` in the auto-memory directory) and any user and project memories relevant to the question. That gives the mentor the user's real context: their role at XBOW, the work they lead (safety evaluation, safety monitors and LLM judges, A/B evals of models on autonomous pentesting agents), and their recent output. Use this context the way a mentor who knows them would ("the safety-model split work you just shipped is exactly the kind of thing that..."). Don't recite it back to them.
 
-If something important isn't in memory (their goals, constraints, timeline, what they enjoy), ask.
+Then load the user's career notes from their Obsidian vault at `~/.mai_code/mai-notes`. Every note that matters for career context has `career` in its frontmatter `tags`, so find them with:
+
+```bash
+grep -rlx --include='*.md' '  - career' ~/.mai_code/mai-notes
+```
+
+Read them all before advising. Start with `2. ATLAS/Career/Career Goals.md`, `2. ATLAS/Career/Plan.md` and `3. WORK/Now.md`, and skim the long job postings in `2. ATLAS/Career/Jobs/`. If the user points to other notes for this session (for example, a recent meeting note), read those too, even though they aren't tagged.
+
+The vault has its own rules, set in its `CLAUDE.md`, and they apply here:
+- The vault is read-only for this skill. Never edit, tag or tidy the user's notes.
+- `3. WORK` is XBOW material. Use it for advice in this conversation, but never copy it outside the vault.
+- If a note contains customer names next to assessment details, findings or test results, don't carry those names into the conversation (see Guardrails).
+
+If something important isn't in memory or the notes (their goals, constraints, timeline, what they enjoy), ask.
 
 ## Shape of a session
 
