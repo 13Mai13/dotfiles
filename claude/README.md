@@ -13,6 +13,7 @@ Claude Code skills, stowed into `~/.claude/skills/` (global: every repo).
 | `improve-codebase-architecture` | Matt Pocock | `/improve-codebase-architecture` (manual) |
 | `setup-matt-pocock-skills` | Matt Pocock | `/setup-matt-pocock-skills` (manual, once per repo) |
 | `pr-quiz` | mine, after Geoffrey Litt | `/pr-quiz` (manual) |
+| `mentor` | mine | `/mentor [topic]` (manual): career advice from a simulated Principal AI Security Researcher |
 
 Pocock's skills are copied unmodified from [mattpocock/skills](https://github.com/mattpocock/skills) at commit `4ae2317ddb22b046e26455e4f9c9b3aaaf62212d` (MIT, see `LICENSE-mattpocock-skills`). Edit them freely; to update, re-copy from his repo and diff.
 
